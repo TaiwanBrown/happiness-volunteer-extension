@@ -2,11 +2,13 @@
 
 > **Unofficial** support tools for WordPress.com Forum Volunteers
 
-A Chrome/Edge extension designed to help WordPress.com Forum Volunteers provide better support to the community.
+A Chrome/Edge **side panel extension** designed to help WordPress.com Forum Volunteers provide technical support to the community. This extension opens a convenient side panel in your browser, allowing you to access support tools while working with forum users without switching tabs.
+
+![Happiness Volunteer Extension Screenshot](Screenshot/Happiness-Volunteer-screenshot.jpg)
 
 ## ⚠️ Disclaimer
 
-This extension is **not officially affiliated with or endorsed by Automattic or WordPress.com**. It is an independent tool created by volunteers to assist other volunteers.
+This extension is **not officially affiliated with or endorsed by Automattic or WordPress.com**. It is an independent tool created by volunteers to assist other volunteers providing technical support.
 
 ## ✨ Features
 
