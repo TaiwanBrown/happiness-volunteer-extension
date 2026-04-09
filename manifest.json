@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Happiness Volunteer",
+  "version": "1.0.2",
+  "description": "Unofficial support tools for WordPress.com Forum Volunteers",
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+  "action": {
+    "default_title": "Click to open panel"
+  },
+  "side_panel": {
+    "default_path": "sidepanels/tools.html"
+  },
+  "permissions": ["sidePanel", "tabs", "storage", "scripting", "webNavigation"],
+  "host_permissions": ["<all_urls>"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "all_frames": true
+    }
+  ]
+}

@@ -1,0 +1,190 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Home - Happiness Volunteer</title>
+    <link rel="stylesheet" href="tools.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="header">
+        <h1>Home</h1>
+        <div class="header-buttons">
+          <button class="btn" id="goToNotes">📝 Notes</button>
+          <button class="btn" id="goToSettings">⚙️</button>
+        </div>
+      </div>
+
+      <div class="sections-container" id="sectionsContainer">
+        <div class="section" id="search" draggable="true">
+          <div class="section-header">
+            <span class="drag-handle">⋮⋮</span>
+            <h2>Support Search</h2>
+            <button class="collapse-btn" aria-label="Collapse section">−</button>
+          </div>
+          <div class="section-content">
+            <div class="row">
+              <input id="searchInput" type="text" placeholder="Search WordPress.com support..." />
+              <button class="btn" id="searchBtn">Search</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" id="youtube" draggable="true">
+          <div class="section-header">
+            <span class="drag-handle">⋮⋮</span>
+            <h2>Official YouTube Channel Search</h2>
+            <button class="collapse-btn" aria-label="Collapse section">−</button>
+          </div>
+          <div class="section-content">
+            <div class="row">
+              <input id="youtubeInput" type="text" placeholder="Search WordPress YouTube videos..." />
+              <button class="btn" id="youtubeBtn">Search</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" id="links" draggable="true">
+          <div class="section-header">
+            <span class="drag-handle">⋮⋮</span>
+            <h2>Bookmarks</h2>
+            <button class="collapse-btn" aria-label="Collapse section">−</button>
+          </div>
+          <div class="section-content">
+            <div class="grid" id="bookmarksGrid"></div>
+            <div class="bookmark-add">
+              <input type="text" id="bookmarkTitle" placeholder="Bookmark title..." />
+              <input type="text" id="bookmarkUrl" placeholder="https://example.com" />
+              <button class="btn" id="addBookmark">Add Bookmark</button>
+            </div>
+            <div class="hint">Remember to include https:// in the URL for the bookmark to work properly.</div>
+          </div>
+        </div>
+
+        <div class="section" id="responses" draggable="true">
+          <div class="section-header">
+            <span class="drag-handle">⋮⋮</span>
+            <h2>Responses</h2>
+            <button class="collapse-btn" aria-label="Collapse section">−</button>
+          </div>
+          <div class="section-content">
+            <div class="grid" id="responsesGrid"></div>
+            <div class="response-add">
+              <input type="text" id="responseTitle" placeholder="Response title..." />
+              <textarea id="responseText" rows="3" placeholder="Response text..."></textarea>
+              <button class="btn" id="addResponse">Add Response</button>
+            </div>
+            <div class="hint">Place your cursor in a text field on the page, then click a response. If direct insert isn't possible, we'll copy it to your clipboard.</div>
+          </div>
+        </div>
+
+        <div class="section" id="profiler" draggable="true">
+          <div class="section-header">
+            <span class="drag-handle">⋮⋮</span>
+            <h2>Site Profiler</h2>
+            <a href="https://wordpress.com/site-profiler" target="_blank" class="new-tab-icon" title="Open in new tab">↗</a>
+            <button class="collapse-btn" aria-label="Collapse section">−</button>
+          </div>
+          <div class="section-content">
+            <div class="row">
+              <input id="profilerSiteInput" type="text" placeholder="Enter website URL (e.g., example.com)" />
+              <button class="btn" id="loadProfiler">Check URL</button>
+              <button class="btn" id="copyProfilerUrl">Copy Profile</button>
+            </div>
+            <iframe id="profilerFrame" src="https://wordpress.com/site-profiler" title="WordPress.com Site Profiler"></iframe>
+          </div>
+        </div>
+
+        <div class="section" id="common-issues" draggable="true">
+          <div class="section-header">
+            <span class="drag-handle">⋮⋮</span>
+            <h2>Common Issues Quick Reference</h2>
+            <button class="collapse-btn" aria-label="Collapse section">−</button>
+          </div>
+          <div class="section-content">
+            <div class="issue-list">
+              <div class="issue-item">
+                <div class="issue-title">Login Problems</div>
+                <div class="issue-solution">Check password reset, 2FA issues, or browser cache. <a href="https://wordpress.com/support/account-recovery/" target="_blank">Account Recovery →</a></div>
+              </div>
+              <div class="issue-item">
+                <div class="issue-title">Billing & Subscriptions</div>
+                <div class="issue-solution">Verify payment method, check renewal dates, review plan features. <a href="https://wordpress.com/support/plan-features/" target="_blank">Plan Features →</a></div>
+              </div>
+              <div class="issue-item">
+                <div class="issue-title">Domain Issues</div>
+                <div class="issue-solution">Check DNS settings, domain mapping, or transfer status. <a href="https://wordpress.com/support/domains/" target="_blank">Domain Guide →</a></div>
+              </div>
+              <div class="issue-item">
+                <div class="issue-title">Email Configuration</div>
+                <div class="issue-solution">Verify email forwarding, G Suite setup, or email client settings. <a href="https://wordpress.com/support/add-email/" target="_blank">Email Setup →</a></div>
+              </div>
+              <div class="issue-item">
+                <div class="issue-title">Plugin Conflicts</div>
+                <div class="issue-solution">Disable plugins one by one, check compatibility, review error logs. <a href="https://wordpress.com/support/plugins/" target="_blank">Plugin Guide →</a></div>
+              </div>
+              <div class="issue-item">
+                <div class="issue-title">Site Performance</div>
+                <div class="issue-solution">Check caching, optimize images, review hosting plan limits. <a href="https://wordpress.com/support/site-speed/" target="_blank">Speed Guide →</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" id="escalation" draggable="true">
+          <div class="section-header">
+            <span class="drag-handle">⋮⋮</span>
+            <h2>Escalation Guidelines</h2>
+            <a href="https://wordpress.com/support/wordpress-com-volunteers/#when-to-call-in-staff" target="_blank" class="new-tab-icon" title="Open in new tab">↗</a>
+            <button class="collapse-btn" aria-label="Collapse section">−</button>
+          </div>
+          <div class="section-content">
+            <div class="escalation-intro">When to call in staff support:</div>
+            <div class="escalation-list">
+              <div class="escalation-item">
+                <div class="escalation-category">🔒 Security & Abuse</div>
+                <div class="escalation-desc">Hacked sites, spam, malware, or Terms of Service violations</div>
+              </div>
+              <div class="escalation-item">
+                <div class="escalation-category">💳 Billing Issues</div>
+                <div class="escalation-desc">Refunds, payment disputes, subscription problems, or upgrade issues</div>
+              </div>
+              <div class="escalation-item">
+                <div class="escalation-category">🌐 Domain Problems</div>
+                <div class="escalation-desc">Domain transfers, DNS issues, or domain registration problems</div>
+              </div>
+              <div class="escalation-item">
+                <div class="escalation-category">⚙️ Technical Issues</div>
+                <div class="escalation-desc">Site downtime, database errors, or platform bugs beyond volunteer scope</div>
+              </div>
+              <div class="escalation-item">
+                <div class="escalation-category">👤 Account Access</div>
+                <div class="escalation-desc">Locked accounts, ownership disputes, or account recovery issues</div>
+              </div>
+              <div class="escalation-item">
+                <div class="escalation-category">📧 Email Services</div>
+                <div class="escalation-desc">G Suite/Titan setup issues, email delivery problems, or mailbox access</div>
+              </div>
+              <div class="escalation-item">
+                <div class="escalation-category">⚖️ Legal Matters</div>
+                <div class="escalation-desc">DMCA requests, copyright issues, or legal compliance questions</div>
+              </div>
+            </div>
+            <div class="escalation-note">
+              Add the tag <i class="tag-copy" data-tag="modlook">modlook</i> to alert the Happiness Engineering team. Before tagging a thread, ask the user for relevant information like the URL of the site or the domain if it was not shared.
+            </div>
+            <div class="escalation-note">
+              If a forum post is clearly spam, tag it with <i class="tag-copy" data-tag="modlook">modlook</i> and <i class="tag-copy" data-tag="spammer">spammer</i>. DO NOT REPLY TO THE THREAD.
+            </div>
+            <div class="escalation-note">
+              Tag post with sensitive information (Example: Passwords, credit card details, phone numbers, or transaction IDs for upgrades) with <i class="tag-copy" data-tag="remove personal info">remove personal info</i>.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <script src="tools.js"></script>
+  </body>
+</html>

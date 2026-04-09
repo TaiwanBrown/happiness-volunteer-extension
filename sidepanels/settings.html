@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Settings - Happiness Volunteer</title>
+    <link rel="stylesheet" href="tools.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="header">
+        <h1>Settings</h1>
+        <button class="btn" id="backToHome">← Back to Home</button>
+      </div>
+
+      <div class="settings-content">
+        <div class="settings-section">
+          <h2>Welcome!</h2>
+          <p class="welcome-message">
+            Thank you for being a WordPress.com Forum Volunteer! This is an <strong>unofficial</strong> extension designed to help you provide better support to the WordPress.com community. We appreciate your dedication and time spent helping others.
+          </p>
+          <div class="welcome-links">
+            <a href="https://wordpress.com/support/wordpress-com-volunteers/" target="_blank" class="welcome-link">📚 WordPress.com Volunteers Guide</a>
+            <a href="https://wordpress.com/forums/topic/best-practices-community-standards/" target="_blank" class="welcome-link">📋 Forum Community Standards</a>
+          </div>
+          <p class="disclaimer">
+            <em>Note: This extension is not officially affiliated with or endorsed by Automattic or WordPress.com.</em>
+          </p>
+        </div>
+
+        <div class="settings-section">
+          <h2>About This Extension</h2>
+          <div class="info-grid">
+            <div class="info-item">
+              <strong>Version:</strong> 1.0.2
+            </div>
+            <div class="info-item">
+              <strong>Purpose:</strong> Support tools for WordPress.com volunteers
+            </div>
+          </div>
+          <p class="info-desc">
+            This extension provides quick access to support resources, common responses, escalation guidelines, and note-taking capabilities. All sections are customizable and can be rearranged to fit your workflow.
+          </p>
+        </div>
+
+        <div class="settings-section">
+          <h2>Features</h2>
+          <ul class="features-list">
+            <li><strong>Support Search:</strong> Quickly search WordPress.com support documentation</li>
+            <li><strong>YouTube Search:</strong> Find official WordPress tutorials and videos</li>
+            <li><strong>Bookmarks:</strong> Customizable quick links to frequently used pages</li>
+            <li><strong>Common Responses:</strong> Pre-written responses for frequent questions</li>
+            <li><strong>Site Profiler:</strong> Analyze WordPress.com sites</li>
+            <li><strong>Status Pages:</strong> Monitor Automattic service status</li>
+            <li><strong>Common Issues:</strong> Quick reference for troubleshooting</li>
+            <li><strong>Escalation Guidelines:</strong> Know when to call in staff support</li>
+            <li><strong>Quick Notes:</strong> Take and manage notes with timestamps</li>
+          </ul>
+        </div>
+
+        <div class="settings-section">
+          <h2>Manage Sections</h2>
+          <p class="section-desc">Hide sections you don't use. Hidden sections will be moved to the bottom of the home page and collapsed.</p>
+          <div id="sectionToggles"></div>
+        </div>
+
+        <div class="settings-section">
+          <div class="status-header">
+            <h2>Automattic Status</h2>
+            <a href="https://automatticstatus.com/" target="_blank" class="new-tab-icon" title="Open in new tab">↗</a>
+          </div>
+          <iframe src="https://automatticstatus.com/" title="Automattic Status Page" class="status-iframe"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <script src="settings.js"></script>
+  </body>
+</html>
