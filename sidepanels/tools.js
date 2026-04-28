@@ -283,24 +283,23 @@ function initProfiler() {
   const loadBtn = document.getElementById('loadProfiler');
   const copyBtn = document.getElementById('copyProfilerUrl');
   const siteInput = document.getElementById('profilerSiteInput');
-  const iframe = document.getElementById('profilerFrame');
 
   const loadProfile = () => {
-    if (!siteInput || !iframe) return;
+    if (!siteInput) return;
     
     let site = siteInput.value.trim();
     if (!site) {
-      showToast('Please enter a website URL.');
+      showToast('Please enter a website URL');
       return;
     }
-
+    
     // Clean up the URL - remove protocol if present
     site = site.replace(/^https?:\/\//, '').replace(/\/$/, '');
     
-    // Load the site profiler with the specified site
+    // Open the site profiler in a new tab
     const profilerUrl = `https://wordpress.com/site-profiler/${encodeURIComponent(site)}`;
-    iframe.src = profilerUrl;
-    showToast('Loading site profile...');
+    chrome.tabs.create({ url: profilerUrl, active: false });
+    showToast('Opening site profiler in new tab...');
   };
 
   const copyProfilerUrl = async () => {
@@ -308,10 +307,10 @@ function initProfiler() {
     
     let site = siteInput.value.trim();
     if (!site) {
-      showToast('Please enter a website URL first.');
+      showToast('Please enter a website URL');
       return;
     }
-
+    
     // Clean up the URL - remove protocol if present
     site = site.replace(/^https?:\/\//, '').replace(/\/$/, '');
     
