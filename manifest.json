@@ -24,13 +24,5 @@
   "side_panel": {
     "default_path": "sidepanels/tools.html"
   },
-  "permissions": ["sidePanel", "storage", "scripting", "webNavigation"],
-  "host_permissions": ["<all_urls>"],
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["content.js"],
-      "all_frames": true
-    }
-  ]
+  "permissions": ["sidePanel", "storage", "scripting", "webNavigation", "activeTab"]
 }
