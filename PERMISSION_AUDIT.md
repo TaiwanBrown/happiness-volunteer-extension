@@ -28,10 +28,13 @@
 - **API Call**: `chrome.webNavigation.getAllFrames()`
 - **Justification**: Ensures text insertion works in iframes and complex pages
 
-### 5. **`activeTab`** ✅ REQUIRED
-- **Purpose**: Access active tab for text insertion without broad host permissions
-- **Justification**: Replaces `<all_urls>` host permission - more secure and MV3 compliant
-- **Benefit**: Only grants permission when user interacts with extension
+## 🌐 Host Permissions
+
+### **`*://*.wordpress.com/*` and `*://wordpress.com/*`** ✅ REQUIRED
+- **Purpose**: Access WordPress.com domains for text insertion
+- **Justification**: Extension is specifically for WordPress.com Forum Volunteers
+- **Scope**: Only wordpress.com and its subdomains (forums.wordpress.com, etc.)
+- **Benefit**: Much more specific than `<all_urls>` - only accesses relevant sites
 
 ## ❌ Removed Permissions
 
@@ -40,9 +43,9 @@
 - **Violation**: Purple Potassium
 
 ### 2. **`<all_urls>` host permission** ❌ REMOVED (v1.0.3)
-- **Reason**: Too broad - replaced with `activeTab` permission
-- **Benefit**: More privacy-friendly, less likely to be rejected
-- **How it works now**: Content script injected dynamically only when needed
+- **Reason**: Too broad - replaced with WordPress.com-specific host permissions
+- **Benefit**: More privacy-friendly, only accesses WordPress.com domains
+- **How it works now**: Content script injected dynamically only when needed on WordPress.com
 
 ### 3. **Declarative `content_scripts`** ❌ REMOVED (v1.0.3)
 - **Reason**: Not needed - using dynamic injection via `chrome.scripting.executeScript()`
@@ -50,10 +53,11 @@
 
 ## 🔒 Privacy & Security Improvements
 
-1. **No broad host permissions** - Only access active tab when user clicks insert
+1. **WordPress.com-only access** - Only accesses wordpress.com domains, not all websites
 2. **Dynamic injection** - Content script only loaded when needed
 3. **Minimal permissions** - Only what's absolutely necessary
 4. **No sensitive data access** - Extension doesn't read tab URLs or content
+5. **Specific scope** - Extension clearly limited to its intended use case
 
 ## ✅ Manifest V3 Compliance Checklist
 
@@ -61,24 +65,26 @@
 - [x] Uses `service_worker` instead of background page
 - [x] Uses `action` instead of `browser_action`
 - [x] No `tabs` permission for basic tab operations
-- [x] Uses `activeTab` instead of broad host permissions
+- [x] Uses specific host permissions (wordpress.com only) instead of `<all_urls>`
 - [x] Dynamic content script injection
 - [x] No remote code execution
 - [x] No eval() or inline scripts
 - [x] All permissions justified and necessary
+- [x] Minimal permission scope for intended use case
 
 ## 📝 How Text Insertion Works Now
 
-1. User clicks "Insert" button in side panel
+1. User clicks "Insert" button in side panel (while on wordpress.com)
 2. Side panel sends message to service worker
 3. Service worker tries to send message to content script in active tab
 4. If content script not present, dynamically injects it via `chrome.scripting.executeScript()`
 5. Content script inserts text at cursor position
-6. `activeTab` permission grants temporary access only for this interaction
+6. Host permissions only grant access to wordpress.com domains
 
 ## 🎯 Result
 
 **All permissions are necessary and justified.**
 **No excessive permissions.**
+**WordPress.com-specific scope - perfect for the use case.**
 **Fully Manifest V3 compliant.**
 **Ready for Chrome Web Store approval.**

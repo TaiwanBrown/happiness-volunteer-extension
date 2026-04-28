@@ -24,5 +24,9 @@
   "side_panel": {
     "default_path": "sidepanels/tools.html"
   },
-  "permissions": ["sidePanel", "storage", "scripting", "webNavigation", "activeTab"]
+  "permissions": ["sidePanel", "storage", "scripting", "webNavigation"],
+  "host_permissions": [
+    "*://*.wordpress.com/*",
+    "*://wordpress.com/*"
+  ]
 }
