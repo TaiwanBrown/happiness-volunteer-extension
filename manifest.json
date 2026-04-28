@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Happiness Volunteer",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Unofficial support tools for WordPress.com Forum Volunteers",
   "author": "TaiwanBrown",
   "homepage_url": "https://github.com/TaiwanBrown/happiness-volunteer-extension",
@@ -24,7 +24,7 @@
   "side_panel": {
     "default_path": "sidepanels/tools.html"
   },
-  "permissions": ["sidePanel", "tabs", "storage", "scripting", "webNavigation"],
+  "permissions": ["sidePanel", "storage", "scripting", "webNavigation"],
   "host_permissions": ["<all_urls>"],
   "content_scripts": [
     {
